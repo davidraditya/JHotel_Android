@@ -26,15 +26,16 @@
         android:id="@+id/inputEmailReg"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
+        android:layout_marginBottom="1dp"
         android:layout_marginEnd="84dp"
         android:layout_marginStart="84dp"
-        android:layout_marginTop="111dp"
+        android:layout_marginTop="115dp"
         android:ems="10"
         android:hint="E-mail"
         android:inputType="textEmailAddress"
         app:layout_constraintBottom_toTopOf="@+id/inputPassReg"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

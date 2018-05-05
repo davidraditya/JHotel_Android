@@ -6,7 +6,7 @@ import java.util.Map;
 import com.android.volley.Response;
 
 public class LoginRequest extends StringRequest {
-    private static final String Regis_URL = "http://10.5.76.236:8080/logincust";
+    private static final String Regis_URL = "http://192.168.43.79:8080/logincust";
     private Map<String, String> params;
 
     public LoginRequest(String email, String password,  Response.Listener<String> listener) {
