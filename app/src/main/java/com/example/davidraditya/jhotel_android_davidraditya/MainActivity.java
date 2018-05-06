@@ -1,8 +1,10 @@
 package com.example.davidraditya.jhotel_android_davidraditya;
 
+import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
 
@@ -29,10 +31,15 @@ public class MainActivity extends AppCompatActivity {
     HashMap<String, Hotel> hotelHashMap = new HashMap<>();
     HashMap<String, ArrayList<Room>> roomsMap = new HashMap<>();
 
+    private int currentUserId;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Intent menuIntent = getIntent();
+        currentUserId = menuIntent.getIntExtra("id", 0);
 
         expListView = (ExpandableListView) findViewById(R.id.expanded_menu);
 
@@ -75,6 +82,20 @@ public class MainActivity extends AppCompatActivity {
                     }
                     listAdapter = new MenuListAdapter(MainActivity.this, listHotel, childMapping);
                     expListView.setAdapter(listAdapter);
+
+                    expListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
+                        @Override
+                        public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
+                            Room selected = childMapping.get(listHotel.get(groupPosition)).get(childPosition);
+                            Intent intent = new Intent(MainActivity.this, BuatPesananActivity.class);
+                            intent.putExtra("id_customer", currentUserId);
+                            intent.putExtra("nomorKamar", selected.getRoomNumber());
+                            intent.putExtra("dailyTariff", selected.getDailyTariff());
+                            intent.putExtra("id_hotel", listHotel.get(groupPosition).getId());
+                            startActivity(intent);
+                            return false;
+                        }
+                    });
 
                 } catch (JSONException e1) {
                     e1.printStackTrace();
