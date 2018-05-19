@@ -3,15 +3,15 @@ package com.example.davidraditya.jhotel_android_davidraditya;
 public class Lokasi {
     private double x_coord;
     private double y_coord;
-    private String deskripsiLokasi;
+    private String deskripsi;
 
-    public Lokasi(float x_coord,float y_coord, String deskripsiLokasi) {
+    public Lokasi(double x_coord, double y_coord, String deskripsi) {
         this.x_coord = x_coord;
         this.y_coord = y_coord;
-        this.deskripsiLokasi = deskripsiLokasi;
+        this.deskripsi = deskripsi;
     }
 
-        public double getX_coord() {
+    public double getX_coord() {
         return x_coord;
     }
 
@@ -19,8 +19,8 @@ public class Lokasi {
         return y_coord;
     }
 
-    public String getDeskripsiLokasi() {
-        return deskripsiLokasi;
+    public String getDeskripsi() {
+        return deskripsi;
     }
 
     public void setX_coord(double x_coord) {
@@ -31,7 +31,8 @@ public class Lokasi {
         this.y_coord = y_coord;
     }
 
-    public void setDeskripsiLokasi(String deskripsiLokasi) {
-        this.deskripsiLokasi = deskripsiLokasi;
+    public void setDeskripsi(String deskripsi) {
+        this.deskripsi = deskripsi;
     }
 }
+

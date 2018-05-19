@@ -3,6 +3,6 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="buttonColor">#34755685</color>
-    <color name="colorBackground">#40C7AC</color>
+    <color name="abu_abu_muda">#34755685</color>
+    <color name="backgroundview">#448AFF</color>
 </resources>

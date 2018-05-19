@@ -14,4 +14,10 @@
     <string name="hitung">Hitung</string>
     <string name="pesan">Pesan</string>
     <string name="pesanan">Pesanan</string>
+    <string name="id_pesanan">ID Pesanan:</string>
+    <string name="biaya">Biaya:</string>
+    <string name="jumlah_hari">Jumlah Hari:</string>
+    <string name="tanggal">Tanggal:</string>
+    <string name="batal">Batal</string>
+    <string name="selesai">Selesai</string>
 </resources>

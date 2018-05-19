@@ -1,7 +1,8 @@
 package com.example.davidraditya.jhotel_android_davidraditya;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -17,19 +18,19 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class LoginActivity extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        final EditText emailInput = (EditText) findViewById(R.id.inputEmail);
-        final EditText passInput = (EditText) findViewById(R.id.inputPass);
-        final Button loginButton = (Button) findViewById(R.id.buttonLogin);
-        final TextView registerClickable = (TextView) findViewById(R.id.clickableReg);
 
-        loginButton.setOnClickListener(new View.OnClickListener() {
+        final EditText emailInput = findViewById(R.id.inputEmail);
+        final EditText passInput = findViewById(R.id.inputPass);
+        final Button loginButton = findViewById(R.id.buttonLogin);
+        final TextView registerClickable = findViewById(R.id.registerClickable);
+
+        loginButton.setOnClickListener (new View.OnClickListener() {
             @Override
-            public void onClick(View view){
+            public void onClick(View view) {
                 final String email = emailInput.getText().toString();
                 final String password = passInput.getText().toString();
                 Response.Listener<String> responseListener = new Response.Listener<String> () {
@@ -39,20 +40,15 @@ public class LoginActivity extends AppCompatActivity {
                             JSONObject jsonResponse = new JSONObject(response);
                             if(jsonResponse!=null) {
                                 AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
-                                builder.setMessage("Login Success")
-                                        .create()
-                                        .show();
-                                int id = jsonResponse.getInt("id");
-                                Intent i = new Intent(LoginActivity.this, MainActivity.class);
-                                i.putExtra("id",id);
-                                startActivity(i);
+                                builder.setMessage("Login Success").create().show();
 
+                                Intent mainInt = new Intent(LoginActivity.this, MainActivity.class);
+                                mainInt.putExtra("id_customer", jsonResponse.getInt("id"));
+                                LoginActivity.this.startActivity(mainInt);
                             }
                         } catch (JSONException e) {
                             AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
-                            builder.setMessage("Login Failed.")
-                                    .create()
-                                    .show();
+                            builder.setMessage("Login Failed.").create().show();
                         }
                     }
                 };
@@ -64,7 +60,7 @@ public class LoginActivity extends AppCompatActivity {
 
         registerClickable.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view2) {
+            public void onClick(View v) {
                 Intent regisInt = new Intent(LoginActivity.this, RegisterActivity.class);
                 LoginActivity.this.startActivity(regisInt);
             }

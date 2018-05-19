@@ -4,13 +4,13 @@ public class Hotel {
     private int id;
     private String nama;
     private Lokasi lokasi;
-    private int bintang;
+    private  int bintang;
 
-    public Hotel(String nama, Lokasi lokasi, int bintang, int id){
-        this.nama=nama;
-        this.lokasi=lokasi;
-        this.bintang=bintang;
-        this.id=id;
+    public Hotel(int id, String nama, Lokasi lokasi, int bintang) {
+        this.id = id;
+        this.nama = nama;
+        this.lokasi = lokasi;
+        this.bintang = bintang;
     }
 
     public int getId() {
@@ -45,3 +45,4 @@ public class Hotel {
         this.bintang = bintang;
     }
 }
+

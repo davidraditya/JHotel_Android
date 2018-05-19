@@ -1,9 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    tools:context="com.example.davidraditya.jhotel_android_davidraditya.MainActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="visible"
+        tools:ignore="UselessParent">
+        <ExpandableListView
+            android:id="@+id/lvExp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:divider="#f00"
+            android:listSelector="#36f"/>
+
+        <Button
+            android:id="@+id/pesanan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:background="@color/abu_abu_muda"
+            android:text="@string/pesanan"
+            android:textStyle="bold" />
+    </LinearLayout>
+</LinearLayout>

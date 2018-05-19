@@ -6,12 +6,12 @@ import com.android.volley.toolbox.StringRequest;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MenuRequest extends StringRequest {
-    private static final String Menu_URL = "http://192.168.43.79:8080/vacantrooms";
+public class PesananFetchRequest extends StringRequest {
+    private static final String PesananFetch_URL = "http://192.168.43.79:8080/pesanancustomer/";
     private Map<String, String> params;
 
-    public MenuRequest(Response.Listener<String> listener) {
-        super(Method.GET, Menu_URL, listener, null);
+    public PesananFetchRequest(String id_customer, Response.Listener<String> listener) {
+        super(Method.GET, PesananFetch_URL +id_customer, listener, null);
         params = new HashMap<>();
     }
     @Override

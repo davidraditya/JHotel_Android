@@ -6,8 +6,7 @@ public class Room {
     private double dailyTariff;
     private String tipeKamar;
 
-    public Room(String roomNumber, String statusKamar, double dailyTariff, String tipeKamar)
-    {
+    public Room(String roomNumber, String statusKamar, double dailyTariff, String tipeKamar) {
         this.roomNumber = roomNumber;
         this.statusKamar = statusKamar;
         this.dailyTariff = dailyTariff;
